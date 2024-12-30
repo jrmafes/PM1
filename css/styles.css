@@ -111,27 +111,6 @@ body {
    Profile Image Styling
 ---------------------------------------------------- */
 
-#profile-image {
-    width: 100px !important; /* Fixed size in pixels */
-    height: 100px !important; /* Fixed size in pixels */
-    max-width: 100px !important; /* Ensures the image doesn't exceed 100px */
-    max-height: 100px !important; /* Ensures the image doesn't exceed 100px */
-    border-radius: 50%; /* Makes the image circular */
-    position: absolute; /* Allows it to overlap the banner */
-    bottom: -50px; /* Pushes half of the image down below the banner */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%) scale(1) !important; /* Centering and prevent scaling */
-    border: 3px solid white; /* Adds a border for better visual contrast */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    /* Prevent scaling and interactions */
-    -webkit-user-select: none; /* Prevents user from selecting the image */
-    user-select: none;
-    pointer-events: none; /* Makes the image non-interactive */
-    background-color: transparent; /* Ensure background is transparent */
-    display: block !important; /* Ensure block display to prevent inline scaling */
-    line-height: 0; /* Prevent any line-height influence */
-}
-
 /* ---------------------------------------------------
    Responsive Styling for Mobile Devices
 ---------------------------------------------------- */
