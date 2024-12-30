@@ -68,7 +68,7 @@ body {
     border-radius: 50%; /* Makes the image circular */
     position: absolute; /* Allows it to overlap the banner */
     bottom: -50px; /* Pushes half of the image down below the banner */
-    left: 8.5%; /* Centers the profile image horizontally */
+    left: 15%; /* Centers the profile image horizontally */
     transform: none; /* Removes centering adjustment */
     border: 3px solid white; /* Optional: Adds a border for better visual contrast */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
