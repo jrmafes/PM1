@@ -1,27 +1,34 @@
 /* Basic styling for the page background */
 body {
     background-color: lightblue;
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a default font */
 }
 
 /* Style for the layout wrapper */
 #layout-wrapper {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping by default */
     width: 100%;
     min-height: 100vh;
     background-color: #f0f0f0; /* Light gray background */
+    position: relative; /* For positioning child elements if needed */
 }
 
-/* Add this immediately below */
+/* Image Container */
 #image-container {
     position: relative; /* Allows absolute positioning for profile image */
-    height: 150px; /* Adjust this based on your banner image height */
+    width: 100%; /* Make it responsive */
+    height: auto; /* Let the height adjust based on the image */
+    margin-bottom: 60px; /* Provide space for the profile image */
 }
 
+/* Banner Image */
 #banner-image {
-    width: 800px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
+    width: 100%; /* Make the banner image responsive */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Maintain aspect ratio and crop excess */
+    max-height: 150px; /* Optional: Limit the maximum height */
 }
 
 /* Style for each section */
@@ -41,8 +48,9 @@ body {
     display: flex; /* Aligns contents if needed */
     flex-direction: column; /* Keeps elements stacked vertically */
     align-items: center; /* Centers child elements horizontally */
-    height: auto; /* Automatically adjusts to fit its contents */
     padding: 20px; /* Add some spacing */
+    flex: 2; /* Make center content take more space */
+    position: relative; /* To position the profile image */
 }
 
 /* Right Sidebar */
@@ -62,6 +70,18 @@ body {
         flex: 1; /* Take full width */
         padding: 20px; /* Adjust spacing if needed */
     }
+
+    /* Adjust profile image positioning on mobile */
+    #profile-image {
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust centering */
+        bottom: -50px; /* Maintain overlap */
+    }
+
+    /* Adjust image container margin to accommodate profile image */
+    #image-container {
+        margin-bottom: 60px; /* Provide space for the profile image */
+    }
 }
 
 /* Style for the Profile Image */
@@ -71,8 +91,9 @@ body {
     border-radius: 50%; /* Makes the image circular */
     position: absolute; /* Allows it to overlap the banner */
     bottom: -50px; /* Pushes half of the image down below the banner */
-    left: 8.5%; /* Centers the profile image horizontally */
+    left: 8.5%; /* Initial horizontal position */
     transform: none; /* Removes centering adjustment */
     border: 3px solid white; /* Optional: Adds a border for better visual contrast */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    background-color: transparent; /* Ensure background is transparent */
 }
