@@ -19,9 +19,9 @@ body {
 }
 
 #banner-image {
-    width: 100%; /* Make the banner image fill the width of the container */
-    height: 100%; /* Make the banner image fill the height of the container */
-    object-fit: cover; /* Ensure the image scales proportionally and crops excess */
+    width: 800px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and crop excess */
 }
 
 /* Style for each section */
@@ -63,8 +63,8 @@ body {
 }
 /* Style for the Profile Image */
 #profile-image {
-    width: 100px; /* Adjust to make it smaller */
-    height: 100px; /* Ensures the image remains a square */
+    width: 100px; /* Fixed size */
+    height: 100px; /* Same as width for a perfect circle */
     border-radius: 50%; /* Makes the image circular */
     position: absolute; /* Allows it to overlap the banner */
     bottom: -50px; /* Pushes half of the image down below the banner */
