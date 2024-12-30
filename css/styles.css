@@ -53,14 +53,17 @@ body {
 
 /* Responsive styling for mobile devices */
 @media (max-width: 768px) {
-    #left-sidebar, #right-sidebar {
-        display: none; /* Hide sidebars */
+    #left-sidebar,
+    #right-sidebar {
+        display: none; /* Hide sidebars on mobile */
     }
 
     #center-content {
         flex: 1; /* Take full width */
+        padding: 20px; /* Adjust spacing if needed */
     }
 }
+
 /* Style for the Profile Image */
 #profile-image {
     width: 100px; /* Fixed size */
