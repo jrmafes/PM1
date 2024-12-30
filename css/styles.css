@@ -61,21 +61,6 @@ body {
     position: relative; /* To position the profile image */
 }
 
-#image-container {
-    position: relative; /* Allows absolute positioning for profile image */
-    width: 100%; /* Make it responsive */
-    height: auto; /* Let the height adjust based on the image */
-    margin-bottom: 60px; /* Provide space for the profile image */
-    font-size: 0; /* Prevent inherited text scaling */
-}
-
-#banner-image {
-    width: 100%; /* Make the banner image responsive */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Maintain aspect ratio and crop excess */
-    max-height: 150px; /* Optional: Limit the maximum height */
-}
-
 #main-text {
     text-align: center;
 }
