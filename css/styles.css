@@ -1,11 +1,26 @@
-/* Basic styling for the page background */
-body {
-    background-color: lightblue;
-    margin: 0; /* Remove default margin */
-    font-family: Arial, sans-serif; /* Set a default font */
+/* ---------------------------------------------------
+   Basic Styling for the Page
+---------------------------------------------------- */
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Style for the layout wrapper */
+/* Body Styling */
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif; /* Set a default font */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ---------------------------------------------------
+   Layout Wrapper
+---------------------------------------------------- */
+
 #layout-wrapper {
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping by default */
@@ -15,7 +30,37 @@ body {
     position: relative; /* For positioning child elements if needed */
 }
 
-/* Image Container */
+/* ---------------------------------------------------
+   Left Sidebar
+---------------------------------------------------- */
+
+#left-sidebar {
+    flex: 1; /* Adjust width proportionally */
+    background-color: #d1e7dd; /* Light green */
+    padding: 20px; /* Fixed padding in pixels */
+}
+
+#left-sidebar h2 {
+    margin-bottom: 10px;
+}
+
+#left-sidebar p {
+    font-size: 1em;
+}
+
+/* ---------------------------------------------------
+   Center Content
+---------------------------------------------------- */
+
+#center-content {
+    flex: 2; /* Make center content take more space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Fixed padding in pixels */
+    position: relative; /* To position the profile image */
+}
+
 #image-container {
     position: relative; /* Allows absolute positioning for profile image */
     width: 100%; /* Make it responsive */
@@ -23,7 +68,6 @@ body {
     margin-bottom: 60px; /* Provide space for the profile image */
 }
 
-/* Banner Image */
 #banner-image {
     width: 100%; /* Make the banner image responsive */
     height: auto; /* Maintain aspect ratio */
@@ -31,36 +75,69 @@ body {
     max-height: 150px; /* Optional: Limit the maximum height */
 }
 
-/* Style for each section */
-#left-sidebar, #center-content, #right-sidebar {
-    padding: 20px;
-    box-sizing: border-box;
+#main-text {
+    text-align: center;
 }
 
-/* Left Sidebar */
-#left-sidebar {
-    flex: 1; /* Adjust width proportionally */
-    background-color: #d1e7dd; /* Light green */
+#main-text h1 {
+    margin-bottom: 15px;
+    font-size: 2em;
 }
 
-/* Center Content */
-#center-content {
-    display: flex; /* Aligns contents if needed */
-    flex-direction: column; /* Keeps elements stacked vertically */
-    align-items: center; /* Centers child elements horizontally */
-    padding: 20px; /* Add some spacing */
-    flex: 2; /* Make center content take more space */
-    position: relative; /* To position the profile image */
+#main-text p {
+    font-size: 1em;
 }
 
-/* Right Sidebar */
+/* ---------------------------------------------------
+   Right Sidebar
+---------------------------------------------------- */
+
 #right-sidebar {
     flex: 1; /* Adjust width proportionally */
     background-color: #f8d7da; /* Light red */
+    padding: 20px; /* Fixed padding in pixels */
 }
 
-/* Responsive styling for mobile devices */
+#right-sidebar h2 {
+    margin-bottom: 10px;
+}
+
+#right-sidebar p {
+    font-size: 1em;
+}
+
+/* ---------------------------------------------------
+   Profile Image Styling
+---------------------------------------------------- */
+
+#profile-image {
+    width: 100px; /* Fixed size in pixels */
+    height: 100px; /* Fixed size in pixels */
+    max-width: 100px; /* Ensures the image doesn't exceed 100px */
+    max-height: 100px; /* Ensures the image doesn't exceed 100px */
+    border-radius: 50%; /* Makes the image circular */
+    position: absolute; /* Allows it to overlap the banner */
+    bottom: -50px; /* Pushes half of the image down below the banner */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%) scale(1); /* Centering and prevent scaling */
+    border: 3px solid white; /* Adds a border for better visual contrast */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    /* Prevent scaling */
+    -webkit-user-select: none; /* Prevents user from selecting the image */
+    user-select: none;
+    pointer-events: none; /* Makes the image non-interactive */
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+/* ---------------------------------------------------
+   Responsive Styling for Mobile Devices
+---------------------------------------------------- */
+
 @media (max-width: 768px) {
+    #layout-wrapper {
+        flex-direction: column; /* Stack elements vertically if needed */
+    }
+
     #left-sidebar,
     #right-sidebar {
         display: none; /* Hide sidebars on mobile */
@@ -68,32 +145,32 @@ body {
 
     #center-content {
         flex: 1; /* Take full width */
-        padding: 20px; /* Adjust spacing if needed */
+        padding: 20px; /* Fixed padding in pixels */
     }
 
-    /* Adjust profile image positioning on mobile */
+    /* Adjust Profile Image Positioning on Mobile */
     #profile-image {
         left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Adjust centering */
+        transform: translateX(-50%) scale(1); /* Ensure no scaling */
         bottom: -50px; /* Maintain overlap */
     }
 
-    /* Adjust image container margin to accommodate profile image */
+    /* Adjust Image Container Margin to Accommodate Profile Image */
     #image-container {
         margin-bottom: 60px; /* Provide space for the profile image */
     }
-}
 
-/* Style for the Profile Image */
-#profile-image {
-    width: 100px; /* Fixed size */
-    height: 100px; /* Same as width for a perfect circle */
-    border-radius: 50%; /* Makes the image circular */
-    position: absolute; /* Allows it to overlap the banner */
-    bottom: -50px; /* Pushes half of the image down below the banner */
-    left: 8.5%; /* Initial horizontal position */
-    transform: none; /* Removes centering adjustment */
-    border: 3px solid white; /* Optional: Adds a border for better visual contrast */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
-    background-color: transparent; /* Ensure background is transparent */
+    /* Optional: Adjust Banner Image for Smaller Screens */
+    #banner-image {
+        max-height: 120px; /* Reduce max height on mobile */
+    }
+
+    /* Optional: Adjust Text Sizes for Better Readability */
+    #main-text h1 {
+        font-size: 1.5em;
+    }
+
+    #main-text p {
+        font-size: 0.9em;
+    }
 }
