@@ -1,143 +1,64 @@
-/* ---------------------------------------------------
-   Basic Styling for the Page
----------------------------------------------------- */
-
-/* Reset default margins and paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
+/* Basic styling for the page background */
 body {
     background-color: lightblue;
-    font-family: Arial, sans-serif; /* Set a default font */
-    line-height: 1.6;
-    color: #333;
 }
 
-/* ---------------------------------------------------
-   Layout Wrapper
----------------------------------------------------- */
-
+/* Style for the layout wrapper */
 #layout-wrapper {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping by default */
+    flex-wrap: wrap;
     width: 100%;
     min-height: 100vh;
     background-color: #f0f0f0; /* Light gray background */
-    position: relative; /* For positioning child elements if needed */
 }
 
-/* ---------------------------------------------------
-   Left Sidebar
----------------------------------------------------- */
+/* Style for each section */
+#left-sidebar, #center-content, #right-sidebar {
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+/* Left Sidebar */
 #left-sidebar {
     flex: 1; /* Adjust width proportionally */
     background-color: #d1e7dd; /* Light green */
-    padding: 20px; /* Fixed padding in pixels */
 }
 
-#left-sidebar h2 {
-    margin-bottom: 10px;
-}
-
-#left-sidebar p {
-    font-size: 1em;
-}
-
-/* ---------------------------------------------------
-   Center Content
----------------------------------------------------- */
-
+/* Center Content */
 #center-content {
-    flex: 2; /* Make center content take more space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Fixed padding in pixels */
-    position: relative; /* To position the profile image */
+    display: flex; /* Aligns contents if needed */
+    flex-direction: column; /* Keeps elements stacked vertically */
+    align-items: center; /* Centers child elements horizontally */
+    height: auto; /* Automatically adjusts to fit its contents */
+    padding: 20px; /* Add some spacing */
 }
 
-#main-text {
-    text-align: center;
-}
-
-#main-text h1 {
-    margin-bottom: 15px;
-    font-size: 2em;
-}
-
-#main-text p {
-    font-size: 1em;
-}
-
-/* ---------------------------------------------------
-   Right Sidebar
----------------------------------------------------- */
-
+/* Right Sidebar */
 #right-sidebar {
     flex: 1; /* Adjust width proportionally */
     background-color: #f8d7da; /* Light red */
-    padding: 20px; /* Fixed padding in pixels */
 }
 
-#right-sidebar h2 {
-    margin-bottom: 10px;
-}
-
-#right-sidebar p {
-    font-size: 1em;
-}
-
-/* ---------------------------------------------------
-   Profile Image Styling
----------------------------------------------------- */
-
-/* ---------------------------------------------------
-   Responsive Styling for Mobile Devices
----------------------------------------------------- */
-
+/* Responsive styling for mobile devices */
 @media (max-width: 768px) {
-    #layout-wrapper {
-        flex-direction: column; /* Stack elements vertically if needed */
-    }
-
-    #left-sidebar,
-    #right-sidebar {
-        display: none; /* Hide sidebars on mobile */
+    #left-sidebar, #right-sidebar {
+        display: none; /* Hide sidebars */
     }
 
     #center-content {
         flex: 1; /* Take full width */
-        padding: 20px; /* Fixed padding in pixels */
     }
+}
 
-    /* Adjust Profile Image Positioning on Mobile */
-    #profile-image {
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%) scale(1) !important; /* Ensure no scaling */
-        bottom: -50px; /* Maintain overlap */
-    }
-
-    /* Adjust Image Container Margin to Accommodate Profile Image */
-    #image-container {
-        margin-bottom: 60px; /* Provide space for the profile image */
-    }
-
-    /* Optional: Adjust Banner Image for Smaller Screens */
-    #banner-image {
-        max-height: 120px; /* Reduce max height on mobile */
-    }
-
-    /* Optional: Adjust Text Sizes for Better Readability */
-    #main-text h1 {
-        font-size: 1.5em;
-    }
-
-    #main-text p {
-        font-size: 0.9em;
-    }
+/* Style for the Profile Image */
+#profile-image {
+    width: 100px; /* Adjust to make it smaller */
+    height: 100px; /* Ensures the image remains a square */
+    border-radius: 50%; /* Makes the image circular */
+    position: absolute; /* Allows it to overlap the banner */
+    bottom: -50px; /* Pushes half of the image down below the banner */
+    left: 50%; /* Centers the profile image horizontally */
+    transform: translateX(-50%); /* Adjusts to align perfectly at the center */
+    border: 3px solid white; /* Optional: Adds a border for better visual contrast */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
 }
